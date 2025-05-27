@@ -21,5 +21,10 @@ jobs:
       - name: Build app
         run: ./scripts/buildprod.sh
 
+      - id: 'auth'
+            uses: 'google-github-actions/auth@v2'
+            with:
+              service_account: 'cloud-run-deployer@notely-461120.iam.gserviceaccount.com'
+
       - name: Set up Gcloud
         uses: 'google-github-actions/setup-gcloud@v2'
